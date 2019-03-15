@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/menuka/.oh-my-zsh"
@@ -9,7 +9,7 @@ export ZSH="/Users/menuka/.oh-my-zsh"
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 # ZSH_THEME="robbyrussell"
-ZSH_THEME="spaceship"
+ZSH_THEME="robbyrussell"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -37,7 +37,7 @@ ZSH_THEME="spaceship"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
+ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # COMPLETION_WAITING_DOTS="true"
@@ -63,7 +63,15 @@ ZSH_THEME="spaceship"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(
+  git
+  bundler
+  dotenv
+  osx
+  rake
+  rbenv
+  ruby
+)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -111,6 +119,8 @@ alias ei_home='cd /Library/WSO2/EnterpriseIntegrator/6.4.0'
 export EI_HOME='/Library/WSO2/EnterpriseIntegrator/6.4.0'
 alias wum_ei='cd /Users/menuka/.wum3/products/wso2ei/6.4.0/full/wso2ei-6.4.0/bin'
 
+alias ls='colorls'
+
 # Python VirtualEnvs
 alias datascience='source /Users/menuka/python-virtualenvs/datascience/bin/activate'
 alias general='source /Users/menuka/python-virtualenvs/general/bin/activate'
@@ -141,3 +151,44 @@ function mvn_new_project () {
 }
 
 # End of Aliases - Menuka
+
+
+export JMETER_HOME=/Applications/apache-jmeter-5.0
+export PATH="$JMETER_HOME/bin:$PATH"
+# alias jmeter="$JMETER_HOME/bin/jmeter"
+
+# Add MySQL to PATH 
+export PATH="/usr/local/mysql/bin:$PATH"
+
+# Add BZT to path
+export PATH="/Users/menuka/Library/Python/3.7/bin:$PATH"
+
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_191.jdk/Contents/Home"
+# Add JMeter to PATH
+
+
+# Adding Metasploit
+export PATH="$PATH:/opt/metasploit-framework/bin"
+
+function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
+
+# update PATH for the Google Cloud SDK.
+if [ -f '/Users/menuka/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/menuka/google-cloud-sdk/path.zsh.inc'; fi
+
+# enable shell command completion for gcloud.
+if [ -f '/Users/menuka/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/menuka/google-cloud-sdk/completion.zsh.inc'; fi
+
+export M2_HOME=/Applications/apache-maven-3.3.9
+export PATH=$PATH:$M2_HOME/bin
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+export PATH="/usr/local/opt/tomcat@8/bin:$PATH"
+export PATH="/Library/Ballerina/ballerina-0.990.3/bin:$PATH"
+
+function connect_to_vm() {
+    ~/Documents/connect_to_vm.sh
+}
+source /usr/local/opt/powerlevel9k/powerlevel9k.zsh-theme
+
+source ~/zsh/powerline-config.sh
